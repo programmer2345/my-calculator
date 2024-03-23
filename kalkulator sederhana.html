@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #num1 {
+        width: 100px;
+      }
+      #num2 {
+        width: 100px;
+      }
+      button {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>kalkulator</h1>
+    <input type="text" id="num1" />&nbsp;dan
+    <input type="text" id="num2" /><br />
+    <button onclick="plus()">+</button>
+    <button onclick="minus()">-</button><button onclick="times()">x</button
+    ><button onclick="dist()">/</button><br />hasil: <br />
+    <div id="hasil"></div>
+    <script>
+      function plus() {
+        const $angka1 = Number(document.getElementById("num1").value);
+
+        const $angka2 = Number(document.getElementById("num2").value);
+        let hasil = document.getElementById("hasil");
+        if (
+          $angka1 == NaN ||
+          $angka2 == NaN ||
+          ($angka1 == NaN && $angka2 == NaN)
+        ) {
+          hasil.innerText = NaN;
+        }
+        let hraw = $angka1 + $angka2;
+
+        hasil.innerText = hraw;
+      }
+      function minus() {
+        const $angka1 = Number(document.getElementById("num1").value);
+
+        const $angka2 = Number(document.getElementById("num2").value);
+        let hasil = document.getElementById("hasil");
+        if (
+          $angka1 == NaN ||
+          $angka2 == NaN ||
+          ($angka1 == NaN && $angka2 == NaN)
+        ) {
+          hasil.innerText = "bukan angka";
+        }
+        let hraw = $angka1 - $angka2;
+        hasil.innerText = hraw;
+      }
+      function times() {
+        const $angka1 = Number(document.getElementById("num1").value);
+
+        const $angka2 = Number(document.getElementById("num2").value);
+        let hasil = document.getElementById("hasil");
+        if (
+          $angka1 == NaN ||
+          $angka2 == NaN ||
+          ($angka1 == NaN && $angka2 == NaN)
+        ) {
+          hasil.innerText = "bukan angka";
+        }
+        let hraw = $angka1 * $angka2;
+
+        hasil.innerText = hraw;
+      }
+      function dist() {
+        const $angka1 = Number(document.getElementById("num1").value);
+
+        const $angka2 = Number(document.getElementById("num2").value);
+        let hasil = document.getElementById("hasil");
+        if (
+          $angka1 == NaN ||
+          $angka2 == NaN ||
+          ($angka1 == NaN && $angka2 == NaN)
+        ) {
+          hasil.innerText = "bukan angka";
+        }
+        if ($angka2 == 0) {
+          hasil.innerText = undefined;
+        } else {
+          let hraw = $angka1 / $angka2;
+
+          hasil.innerText = hraw;
+        }
+      }
+    </script>
+  </body>
+</html>
